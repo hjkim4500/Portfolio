@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/css/main/main.css" />
+
+    <script
+      src="https://kit.fontawesome.com/894e0de9d6.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="bg_star"></canvas>
+    <div id="drawing_line">
+      <svg class="drawing_line_svg">
+        <circle class="drawing_line_circle" cx="0" cy="0" r="20"></circle>
+        <polyline class="drawing_line_polyline" points=""></polyline>
+      </svg>
+    </div>
+    <header>
+      <div class="navbar">
+        <div class="navbar_wrap">
+          <div class="navbar_logo">
+            <h2><a href="#main_1">KHJ Portfolio</a></h2>
+          </div>
+
+          <a href="#" class="navbar_toggle"><i class="fas fa-bars"></i></a>
+        </div>
+        <div class="navbar_menu">
+          <ul>
+            <li><a href="#main_2">About Me</a></li>
+            <li><a href="#main_3">Skill</a></li>
+            <li><a href="#main_4">Works</a></li>
+            <li><a href="#main_5">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="modal" class="modal_background">
+      <div class="modal_box">
+        <div class="modal_box_wrap">
+          <i class="fa-solid fa-x"></i>
+          <div id="about_me" class="exp">
+            <div class="title">
+              <h2>
+                "안녕하세요, 작은 걸음으로 큰 도약을 꿈꾸는 김현준입니다."
+              </h2>
+            </div>
+            <div class="exp_aboutme">
+              <div class="picture">
+                <img src="/img/my_picture2.jpg" />
+              </div>
+              <div class="about_me_exp">
+                <h2>이름</h2>
+                <h3>김현준</h3>
+                <h2>생년월일</h2>
+                <h3>91.11.11</h3>
+                <h2>거주지</h2>
+                <h3>북구 오치동</h3>
+              </div>
+            </div>
+          </div>
+          <div id="skill" class="exp">
+            <div class="skill_exp">
+              <div class="skill_exp_wrap">
+                <div class="title">
+                  <h2>HTML</h2>
+                </div>
+                <div class="gage">
+                  <div class="gage_in html"></div>
+                </div>
+              </div>
+              <div class="skill_exp_wrap">
+                <div class="title">
+                  <h2>CSS</h2>
+                </div>
+                <div class="gage">
+                  <div class="gage_in css"></div>
+                </div>
+              </div>
+              <div class="skill_exp_wrap">
+                <div class="title">
+                  <h2>JS</h2>
+                </div>
+                <div class="gage">
+                  <div class="gage_in js"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="work" class="exp">
+            <div class="work_exp">
+              <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="http://designcomma.co.kr/" target="_blank"
+                      ><img src="/img/Design_Comma.PNG"
+                    /></a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="http://jhckorea.org/" target="_blank">
+                      <img src="/img/jhc_tour.PNG" />
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="http://mems.ne.kr/ko/" target="_blank">
+                      <img src="/img/mems.PNG" />
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="https://luenah.com/" target="_blank">
+                      <img src="/img/Alob_designer.PNG" />
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="https://www.hi-alob.com/" target="_blank">
+                      <img src="/img/Alob.PNG" />
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+          <div id="contact" class="exp">
+            <div class="contact_exp">
+              <div class="contact_exp_wrap">
+                <div class="img">
+                  <i class="fa-solid fa-phone"></i>
+                  <h2>전화번호</h2>
+                </div>
+                <div class="contact_info">
+                  <h2>010-4028-1161</h2>
+                </div>
+              </div>
+              <div class="contact_exp_wrap">
+                <div class="img">
+                  <i class="fa-solid fa-envelope"></i>
+                  <h2>E-MAIL</h2>
+                </div>
+                <div class="contact_info">
+                  <h2>hjkim4500@naver.com</h2>
+                </div>
+              </div>
+              <div class="contact_exp_wrap">
+                <div class="img">
+                  <i class="fa-brands fa-instagram"></i>
+                  <h2>INSTAGRAM</h2>
+                </div>
+                <div class="contact_info">
+                  <a href="https://www.instagram.com/kimmy_jun_1122/?next=%2F"
+                    >여기로 클릭!</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="main_1" id="main_1">
+        <div class="portfolio">
+          <div class="center">
+            <div class="project">
+              <h2>Kim Hyun Joon</h2>
+              <h3>portfolio</h3>
+            </div>
+          </div>
+
+          <div class="position left_top">
+            <div class="position_wrap">
+              <div class="circle About_me">
+                <div class="content_wrap">
+                  <div class="title">
+                    <h2>ABOUT ME</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="explain">
+                <div class="explain_wrap">
+                  <div class="title">
+                    <h2>
+                      "안녕하세요, 작은 걸음으로 큰 도약을 꿈꾸는 김현준입니다."
+                    </h2>
+                  </div>
+                  <div class="exp_sum">
+                    <div class="picture">
+                      <img src="/img/my_picture2.jpg" />
+                    </div>
+                    <div class="about_me_exp">
+                      <h2>이름</h2>
+                      <h3>김현준</h3>
+                      <h2>생년월일</h2>
+                      <h3>91.11.11</h3>
+                      <h2>거주지</h2>
+                      <h3>북구 오치동</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal">
+                <div class="learn_more">
+                  <a href="#" class="about_me">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    About Me
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="position right_top">
+            <div class="position_wrap">
+              <div class="circle skill">
+                <div class="content_wrap">
+                  <div class="title">
+                    <h2>SKILL</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="explain">
+                <div class="explain_wrap">
+                  <div class="title">
+                    <h2>SKILL</h2>
+                  </div>
+                  <div class="skill_exp">
+                    <div class="skill_exp_wrap">
+                      <div class="title">
+                        <h2>HTML</h2>
+                      </div>
+                      <div class="gage">
+                        <div class="gage_in html"></div>
+                      </div>
+                    </div>
+                    <div class="skill_exp_wrap">
+                      <div class="title">
+                        <h2>CSS</h2>
+                      </div>
+                      <div class="gage">
+                        <div class="gage_in css"></div>
+                      </div>
+                    </div>
+                    <div class="skill_exp_wrap">
+                      <div class="title">
+                        <h2>JS</h2>
+                      </div>
+                      <div class="gage">
+                        <div class="gage_in js"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal">
+                <div class="learn_more">
+                  <a href="#" class="skill">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Skill
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="position left_bottom">
+            <div class="position_wrap">
+              <div class="circle work">
+                <div class="content_wrap">
+                  <div class="title">
+                    <h2>MY WORK</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="explain">
+                <div class="explain_wrap">
+                  <div class="title">
+                    <h2>WORK</h2>
+                  </div>
+                  <div class="work_exp">
+                    <div class="swiper mySwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <a href="http://designcomma.co.kr/" target="_blank"
+                            ><img src="/img/Design_Comma.PNG"
+                          /></a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="http://jhckorea.org/" target="_blank">
+                            <img src="/img/jhc_tour.PNG" />
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="http://mems.ne.kr/ko/" target="_blank">
+                            <img src="/img/mems.PNG" />
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="https://luenah.com/" target="_blank">
+                            <img src="/img/Alob_designer.PNG" />
+                          </a>
+                        </div>
+                        <div class="swiper-slide">
+                          <a href="https://www.hi-alob.com/" target="_blank">
+                            <img src="/img/Alob.PNG" />
+                          </a>
+                        </div>
+                      </div>
+                      <div class="swiper-button-next"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal">
+                <div class="learn_more">
+                  <a href="#" class="work">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Work
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="position right_bottom">
+            <div class="position_wrap">
+              <div class="circle contact">
+                <div class="content_wrap">
+                  <div class="title">
+                    <h2>CONTACT</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="explain">
+                <div class="explain_wrap">
+                  <div class="title">
+                    <h2>CONTACT</h2>
+                  </div>
+                  <div class="contact_exp">
+                    <div class="contact_exp_wrap">
+                      <div class="img">
+                        <i class="fa-solid fa-phone"></i>
+                        <h2>전화번호</h2>
+                      </div>
+                      <div class="contact_info">
+                        <h2>010-4028-1161</h2>
+                      </div>
+                    </div>
+                    <div class="contact_exp_wrap">
+                      <div class="img">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h2>E-MAIL</h2>
+                      </div>
+                      <div class="contact_info">
+                        <h2>hjkim4500@naver.com</h2>
+                      </div>
+                    </div>
+                    <div class="contact_exp_wrap">
+                      <div class="img">
+                        <i class="fa-brands fa-instagram"></i>
+                        <h2>INSTAGRAM</h2>
+                      </div>
+                      <div class="contact_info">
+                        <a
+                          href="https://www.instagram.com/kimmy_jun_1122/?next=%2F"
+                          >여기로 클릭!</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal">
+                <div class="learn_more">
+                  <a href="#" class="contact">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Contact
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="more_information">
+          <a href="#main_2">
+            <h2>더 알아보기</h2>
+            <img src="/img/down_btn.png" />
+          </a>
+        </div>
+      </div>
+
+      <div class="main_location" id="main_2"></div>
+      <div class="main_2">
+        <div class="main_2_wrap">
+          <div class="good_word sa sa-up">
+            <p class="word">
+              "우주여행은 한 사람에게는 작은 발걸음에 불과했지만,<br />
+              인류에게는 큰 도약이었다."<br />
+            </p>
+            <p class="name">-닐 암스트롱(Neil Armstrong)-</p>
+          </div>
+          <div class="introduce">
+            <div class="left_content sa sa-left">
+              <img src="/img/my_picture.jpg" />
+            </div>
+            <div class="right_content sa sa-right">
+              <div class="introduce_me">
+                <h2>
+                  "안녕하세요, 작은 걸음으로 큰 도약을 꿈꾸는 김현준입니다. "
+                </h2>
+              </div>
+              <div class="introduce_content">
+                <p>
+                  미지의 세계였던 달에 걸음을 내 딛기 위해 꾸준한 훈련과
+                  <br />
+                  노력으로 인류에게 큰 도약으로 바꾼 닐 암스트롱처럼,
+                  <br />
+                  <br />
+                  개발자로서의 역량을 끊임없이 연마하고,<br />
+                  새로운 개발 언어 배우는 부분에서 열린마음으로 <br />
+                  받아들이겠습니다.
+                  <br />
+                  <br />
+                  느리더라도 꾸준한 걸음으로 모두가 좋아할 수 있는,<br />
+                  모두가 만족하는 '프론트엔드 개발자'가 될 수 있도록<br />
+                  노력하겠습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main_location" id="main_3"></div>
+      <div class="main_3 sa sa-up" id="main_3">
+        <div class="main_3_wrap">
+          <div class="my_skill">
+            <div class="my_skill_wrap">
+              <div class="header">
+                <h1>MY SKILL</h1>
+              </div>
+              <div class="skill_content">
+                <div class="skill_content_left">
+                  <div class="using_skill">
+                    <div class="html">
+                      <img src="/img/html_logo.png" />
+                    </div>
+                    <div class="css">
+                      <img src="/img/css_logo.png" />
+                    </div>
+                    <div class="javascript">
+                      <img src="/img/javascript_logo.png" />
+                    </div>
+                  </div>
+                  <div class="used_api">
+                    <div class="used_api_wrap">
+                      <div class="used_header">
+                        <h2>Used Api</h2>
+                      </div>
+                      <div class="api_list">
+                        <a href="http://fabricjs.com/">Fabric.js</a>
+                        <a href="https://swiperjs.com/">Swiper.js</a>
+                        <a href="https://animejs.com/">Anime.js</a>
+                        <a href="https://getbootstrap.com/">Bootstrap</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="studying">
+                    <div class="studying_header">
+                      <h2>Studying</h2>
+                    </div>
+                    <div class="studying_content">
+                      <img src="/img/react_logo.png" />
+                      <img src="/img/typescript_logo.png" />
+                    </div>
+                  </div>
+                </div>
+                <div class="skill_content_right">
+                  <div class="skill_content_right_wrap">
+                    <div class="skill_graph">
+                      <div class="skill_graph_name">
+                        <h2>My Skill Gage</h2>
+                      </div>
+                      <div class="skill_gage">
+                        <div class="name">
+                          <h2>HTML</h2>
+                        </div>
+                        <div class="gage">
+                          <div class="gage_in html"></div>
+                        </div>
+                      </div>
+                      <div class="skill_gage">
+                        <div class="name">
+                          <h2>CSS</h2>
+                        </div>
+                        <div class="gage">
+                          <div class="gage_in css"></div>
+                        </div>
+                      </div>
+                      <div class="skill_gage">
+                        <div class="name">
+                          <h2>JAVASCRIPT</h2>
+                        </div>
+                        <div class="gage">
+                          <div class="gage_in javascript"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="skill_summary">
+                      <div class="skill_summary_title">
+                        <h2>Skill Summary</h2>
+                      </div>
+                      <div class="skill_summary_wrap">
+                        <div class="title">
+                          <h2>HTML</h2>
+                        </div>
+                        <div class="summary">
+                          <p>
+                            html은 최대한 빠르게 배치가 가능하며, 최근에 나온
+                            왠만한 태그는 숙지 하고 있습니다.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="skill_summary_wrap">
+                        <div class="title">
+                          <h2>CSS</h2>
+                        </div>
+                        <div class="summary">
+                          <p>
+                            'SASS'를 활용하고 있으며, transition, transform등
+                            다양한 css 언어를 활용이 가능하며, flex를 자주
+                            사용하고 있습니다. 현재는 grid 공부를 다시 하고
+                            있습니다.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="skill_summary_wrap">
+                        <div class="title">
+                          <h2>JAVASCRIPT</h2>
+                        </div>
+                        <div class="summary">
+                          <p>
+                            Fabric.js, swiper.js등 다양한 api를 사용했으며, 현재
+                            ES6 Class 문법을 공부하고 있는 중입니다.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="skill_summary_wrap">
+                        <div class="title">
+                          <h2>현재</h2>
+                        </div>
+                        <div class="summary">
+                          <p>
+                            현재는 리엑트 및 타입스크립트를 공부하고 있는
+                            중입니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main_location" id="main_4"></div>
+      <div class="main_4" id="main_4">
+        <div class="work_title sa sa-left">
+          <h2>MY WORK</h2>
+        </div>
+        <div class="main_4_wrap">
+          <div class="left_work sa sa-left">
+            <div class="img">
+              <img src="/img/Alob.PNG" />
+            </div>
+            <div class="content">
+              <div class="title">
+                <h2>ALOB</h2>
+              </div>
+              <div class="skill">
+                <div class="skill_type">
+                  <h2>HTML</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>CSS</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>JAVASCRIPT</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>Fabric.js</h2>
+                </div>
+              </div>
+              <div class="summary">
+                <p>
+                  디자인콤마 프로젝트인 ALOB는 방대한 페이지와 더불어
+                  모바일에서도 볼 수 있도록 작업을 했습니다. Fabric.js로 로고
+                  편집기능도 제공하고 있습니다.
+                </p>
+              </div>
+              <div class="link_btn">
+                <a href="https://www.hi-alob.com/">사이트 보러가기</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="right_work sa sa-right">
+            <div class="content">
+              <div class="title">
+                <h2>DESIGN COMMA</h2>
+              </div>
+              <div class="skill">
+                <div class="skill_type">
+                  <h2>HTML</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>CSS</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>JAVASCRIPT</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>Bootstrap</h2>
+                </div>
+              </div>
+              <div class="summary">
+                <p>
+                  디자인콤마 회사에 입사했을 때 첫 프로젝트 입니다. 부트스트랩을
+                  주로 사용하여 pc, 모바일, 테블릿등 어디서든 볼수 있도록
+                  제작하였습니다.
+                </p>
+              </div>
+              <div class="link_btn">
+                <a href="http://designcomma.co.kr/">사이트 보러가기</a>
+              </div>
+            </div>
+            <div class="img">
+              <img src="/img/Design_Comma.PNG" />
+            </div>
+          </div>
+
+          <div class="left_work sa sa-left">
+            <div class="img">
+              <img src="/img/mems.PNG" />
+            </div>
+            <div class="content">
+              <div class="title">
+                <h2>MEMS</h2>
+              </div>
+              <div class="skill">
+                <div class="skill_type">
+                  <h2>HTML</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>CSS</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>JAVASCRIPT</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>Swiper.js</h2>
+                </div>
+              </div>
+              <div class="summary">
+                <p>
+                  기본적인 회사 웹페이지로, Swiper.js를 통해 캐로셀을
+                  만들었습니다.
+                </p>
+              </div>
+              <div class="link_btn">
+                <a href="http://mems.ne.kr/ko/">사이트 보러가기</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="right_work sa sa-right">
+            <div class="content">
+              <div class="title">
+                <h2>JHC Tour</h2>
+              </div>
+              <div class="skill">
+                <div class="skill_type">
+                  <h2>HTML</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>CSS</h2>
+                </div>
+              </div>
+              <div class="summary">
+                <p>
+                  php로 만들어진 api 웹사이트라, 자바스크립트를 못쓰고 css로
+                  만든 웹페이지 입니다. 2주 기간 밖에 없었지만 퀄리티 유지를
+                  위해 노력했습니다.
+                </p>
+              </div>
+              <div class="link_btn">
+                <a href="http://jhckorea.org/">사이트 보러가기</a>
+              </div>
+            </div>
+            <div class="img">
+              <img src="/img/jhc_tour.PNG" />
+            </div>
+          </div>
+
+          <div class="left_work sa sa-left">
+            <div class="img">
+              <img src="/img/Alob_designer.PNG" />
+            </div>
+            <div class="content">
+              <div class="title">
+                <h2>Alob_designer</h2>
+              </div>
+              <div class="skill">
+                <div class="skill_type">
+                  <h2>HTML</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>CSS</h2>
+                </div>
+                <div class="skill_type">
+                  <h2>JAVASCRIPT</h2>
+                </div>
+              </div>
+              <div class="summary">
+                <p>
+                  Alob 웹페이지를 홍보하기 위해 만든 페이지로, 모바일 위주로
+                  만들어진 웹 페이지 입니다. 핸드폰 카메라로 자기 사진을 찍으면
+                  회사 캐릭터로 바꿔줍니다.
+                </p>
+              </div>
+              <div class="link_btn">
+                <a href="https://luenah.com/">사이트 보러가기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main_location" id="main_5"></div>
+      <div class="main_5 sa sa-up">
+        <div class="main_5_wrap">
+          <div class="title">
+            <h2>CONTACT</h2>
+          </div>
+          <div class="introduce">
+            <div class="introduce_up">
+              <div class="introduce_wrap">
+                <div class="img">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="introduce_content">
+                  <h2>이름</h2>
+                  <h3>김현준</h3>
+                </div>
+              </div>
+              <div class="introduce_wrap">
+                <div class="img">
+                  <i class="fa-solid fa-calendar"></i>
+                </div>
+                <div class="introduce_content">
+                  <h2>생년월일</h2>
+                  <h3>91.11.11</h3>
+                </div>
+              </div>
+              <div class="introduce_wrap">
+                <div class="img">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="introduce_content">
+                  <h2>거주지</h2>
+                  <h3>광주 북구 오치동</h3>
+                </div>
+              </div>
+            </div>
+            <div class="introduce_down">
+              <div class="introduce_wrap">
+                <div class="img">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="introduce_content">
+                  <h2>연락처</h2>
+                  <h3>010-4028-1161</h3>
+                </div>
+              </div>
+              <div class="introduce_wrap">
+                <div class="img">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="introduce_content">
+                  <h2>E-mail</h2>
+                  <h3>hjkim4500@naver.com</h3>
+                </div>
+              </div>
+              <div class="introduce_wrap">
+                <div class="img">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="introduce_content">
+                  <h2>instagram</h2>
+                  <a href="https://www.instagram.com/kimmy_jun_1122/?next=%2F"
+                    >여기로 클릭!</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      div
+
+      <div class="main_6 sa sa-up">
+        <div class="inner">
+          <h1>
+            <img src="/img/thanks_for.svg" />
+          </h1>
+          <div class="img_wrap"></div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script type="text/javascript" src="/javascript/mouse.js"></script>
+    <script type="text/javascript" src="/javascript/index.js"></script>
+    <script type="text/javascript" src="/javascript/background.js"></script>
+    <script type="text/javascript" src="/javascript/thanks_for.js"></script>
+    <script type="text/javascript" src="/javascript/main_1.js"></script>
+    <script type="text/javascript" src="/javascript/scroll.js"></script>
+  </body>
+</html>

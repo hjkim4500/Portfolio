@@ -1,0 +1,27 @@
+#drawing_line {
+  position: relative;
+  z-index: 10;
+  height: 0;
+
+  svg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background-color: transparent;
+
+    .drawing_line_polyline {
+      fill: none;
+      stroke: white;
+      opacity: 0.8;
+      stroke-width: 3;
+    }
+    .drawing_line_circle {
+      fill: white;
+      opacity: 0.8;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: transparent;
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    .navbar_wrap {
+      display: flex;
+      justify-content: space-around;
+
+      flex-direction: row;
+    }
+
+    .navbar_logo {
+      display: flex;
+      font-size: 30px;
+      font-weight: bolder;
+
+      a {
+        color: white;
+        opacity: 0.8;
+      }
+
+      &:hover {
+        a {
+          opacity: 1;
+        }
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+          0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+      }
+    }
+  }
+  .navbar_menu {
+    background-color: transparent;
+    transition: all 0.5s;
+    ul {
+      display: flex;
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        opacity: 0.5;
+        font-size: 30px;
+        padding: 8px 20px;
+
+        &:hover {
+          opacity: 1;
+          text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+            0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .navbar_toggle {
+    display: none;
+    color: white;
+    position: absolute;
+    right: 32px;
+    top: 30px;
+    font-size: 35px;
+
+    &:hover {
+      text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+        0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+    }
+  }
+
+  @include tablet {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .navbar_wrap {
+        .navbar_logo {
+          align-items: flex-start;
+        }
+      }
+      .navbar_logo {
+        padding: 20px;
+      }
+    }
+
+    .navbar_menu {
+      display: none;
+      margin-top: 20px;
+      width: 100%;
+      opacity: 0;
+
+      &.active {
+        display: flex;
+        opacity: 1;
+      }
+      ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        li {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    .navbar_toggle {
+      display: block;
+    }
+  }
+}

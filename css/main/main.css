@@ -1,0 +1,1442 @@
+@charset "UTF-8";
+body {
+  background-color: black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR ", sans-serif;
+  font-weight: 500;
+  word-break: keep-all;
+  -webkit-text-size-adjust: none;
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  transition-delay: 0.2s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: transparent;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-around;
+}
+header .navbar .navbar_wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+header .navbar .navbar_logo {
+  display: flex;
+  font-size: 30px;
+  font-weight: bolder;
+}
+header .navbar .navbar_logo a {
+  color: white;
+  opacity: 0.8;
+}
+header .navbar .navbar_logo:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+header .navbar .navbar_logo:hover a {
+  opacity: 1;
+}
+header .navbar_menu {
+  background-color: transparent;
+  transition: all 0.5s;
+}
+header .navbar_menu ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+header .navbar_menu ul li {
+  opacity: 0.5;
+  font-size: 30px;
+  padding: 8px 20px;
+}
+header .navbar_menu ul li:hover {
+  opacity: 1;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+header .navbar_menu a {
+  text-decoration: none;
+  color: white;
+}
+header .navbar_toggle {
+  display: none;
+  color: white;
+  position: absolute;
+  right: 32px;
+  top: 30px;
+  font-size: 35px;
+}
+header .navbar_toggle:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+@media (min-width: 758px) and (max-width: 1023px) {
+  header .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header .navbar .navbar_wrap .navbar_logo {
+    align-items: flex-start;
+  }
+  header .navbar .navbar_logo {
+    padding: 20px;
+  }
+  header .navbar_menu {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    opacity: 0;
+  }
+  header .navbar_menu.active {
+    display: flex;
+    opacity: 1;
+  }
+  header .navbar_menu ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  header .navbar_menu ul li {
+    width: 100%;
+    text-align: center;
+  }
+  header .navbar_toggle {
+    display: block;
+  }
+}
+
+.portfolio {
+  position: absolute;
+  height: 1500px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio .position {
+  position: absolute;
+  width: 30%;
+  height: 40%;
+}
+.portfolio .position.left_top {
+  top: 5%;
+  left: 10%;
+}
+.portfolio .position.right_top {
+  top: 5%;
+  left: 60%;
+}
+.portfolio .position.left_bottom {
+  left: 10%;
+  top: 65%;
+}
+.portfolio .position.right_bottom {
+  top: 65%;
+  left: 60%;
+}
+.portfolio .position .position_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 2s;
+}
+.portfolio .position .position_wrap .circle {
+  cursor: pointer;
+  position: absolute;
+  background-color: transparent;
+  width: 170px;
+  height: 170px;
+  border-radius: 100%;
+  top: 20%;
+  left: 50%;
+  border: 5px solid white;
+}
+.portfolio .position .position_wrap .circle.About_me {
+  -webkit-animation: flicker 1.5s infinite alternate;
+          animation: flicker 1.5s infinite alternate;
+}
+.portfolio .position .position_wrap .circle.skill {
+  -webkit-animation: flicker2 1.5s infinite alternate;
+          animation: flicker2 1.5s infinite alternate;
+}
+.portfolio .position .position_wrap .circle.work {
+  -webkit-animation: flicker2 1.5s infinite alternate;
+          animation: flicker2 1.5s infinite alternate;
+}
+.portfolio .position .position_wrap .circle.contact {
+  -webkit-animation: flicker 1.5s infinite alternate;
+          animation: flicker 1.5s infinite alternate;
+}
+.portfolio .position .position_wrap .circle:hover {
+  border: 5px solid #0fa;
+}
+.portfolio .position .position_wrap .circle.active {
+  display: none;
+}
+.portfolio .position .position_wrap .circle .content_wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio .position .position_wrap .circle .content_wrap .title {
+  pointer-events: none;
+  font-size: 20px;
+  color: white;
+  font-weight: bolder;
+}
+.portfolio .position .position_wrap .explain {
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  transform: scale(0);
+}
+.portfolio .position .position_wrap .explain.active {
+  opacity: 1;
+  display: block;
+  transform: scale(1);
+}
+.portfolio .position .position_wrap .explain .explain_wrap {
+  padding: 3%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  pointer-events: none;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .title h2 {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .exp_sum {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .picture {
+  width: 55%;
+  max-width: 800px;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .picture img {
+  width: 100%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .about_me_exp {
+  margin-left: 5%;
+  color: white;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .about_me_exp h2 {
+  font-size: 40px;
+  margin: 15px;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .about_me_exp h3 {
+  font-size: 30px;
+  margin: 10px;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp {
+  width: 100%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp .skill_exp_wrap {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp .skill_exp_wrap .title {
+  padding: 20px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp .skill_exp_wrap .gage {
+  width: 80%;
+  background-color: white;
+  opacity: 0.4;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp .skill_exp_wrap .gage .gage_in {
+  height: 100%;
+  background-color: #0fa;
+  opacity: 0.7;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp .skill_exp_wrap .gage .gage_in.html {
+  width: 80%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp .skill_exp_wrap .gage .gage_in.css {
+  width: 70%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .skill_exp .skill_exp_wrap .gage .gage_in.js {
+  width: 65%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .work_exp {
+  position: relative;
+  width: 100%;
+  height: 80%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .work_exp .swiper {
+  width: 100%;
+  height: 100%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .work_exp .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .work_exp .swiper .swiper-slide img {
+  width: 85%;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp .contact_exp_wrap {
+  display: flex;
+  color: white;
+  padding: 20px;
+  justify-content: space-between;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp .contact_exp_wrap .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp .contact_exp_wrap .img i {
+  font-size: 35px;
+  margin-right: 30px;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp .contact_exp_wrap .img h2 {
+  font-size: 35px;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp .contact_exp_wrap .contact_info h2 {
+  font-size: 35px;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp .contact_exp_wrap .contact_info a {
+  color: white;
+  font-size: 35px;
+}
+.portfolio .position .position_wrap .explain .explain_wrap .contact_exp .contact_exp_wrap .contact_info a:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.portfolio .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border: 10px solid white;
+  border-radius: 100%;
+  color: white;
+  background-color: transparent;
+}
+.portfolio .center .project {
+  text-align: center;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: big_small;
+          animation-name: big_small;
+  font-size: 30px;
+  cursor: pointer;
+}
+.portfolio .center .project h2 {
+  background-color: transparent;
+}
+.portfolio .center .project h3 {
+  background-color: transparent;
+}
+.portfolio .center .project:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+.more_information {
+  padding-top: calc(90vh - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+.more_information a {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.more_information a h2:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.more_information a img {
+  width: 80px;
+  -webkit-animation: up_down 1.4s infinite ease-in-out alternate;
+          animation: up_down 1.4s infinite ease-in-out alternate;
+}
+
+@-webkit-keyframes big_small {
+  from {
+    opacity: 0;
+    transform: scale(4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes big_small {
+  from {
+    opacity: 0;
+    transform: scale(4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes up_down {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+@keyframes up_down {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+@-webkit-keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+@-webkit-keyframes flicker2 {
+  18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: none;
+  }
+  20%, 24%, 55% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+}
+@keyframes flicker2 {
+  18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: none;
+  }
+  20%, 24%, 55% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
+  }
+}
+@media (min-width: 758px) and (max-width: 1023px) {
+  .position {
+    width: 40% !important;
+    height: 30% !important;
+  }
+  .position.left_top {
+    left: 5% !important;
+  }
+  .position.left_bottom {
+    left: 5% !important;
+    top: 65% !important;
+  }
+  .position.right_top {
+    left: 55% !important;
+  }
+  .position.right_bottom {
+    left: 55% !important;
+    top: 65% !important;
+  }
+  .position .position_wrap .circle {
+    display: none;
+  }
+  .position .explain {
+    display: none;
+  }
+  .position .modal {
+    display: flex;
+  }
+}
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+.modal .learn_more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40%;
+  flex-direction: column;
+}
+.modal .learn_more a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 80px;
+  padding: 4px 100px 8px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.modal .learn_more a:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+.modal .learn_more a span {
+  display: block;
+  position: absolute;
+  background: white;
+}
+.modal .learn_more a span:nth-child(1) {
+  left: -1px;
+  bottom: -1px;
+  width: 1px;
+  height: 102%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+.modal .learn_more a span:nth-child(2) {
+  left: -1px;
+  bottom: -1px;
+  width: 100.5%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+.modal .learn_more a span:nth-child(3) {
+  right: -1px;
+  bottom: -1px;
+  width: 1px;
+  height: 102%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s;
+  transition-delay: 0.5s;
+}
+.modal .learn_more a span:nth-child(4) {
+  left: -1px;
+  top: -1px;
+  width: 100.5%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+  transition-delay: 0.5s;
+}
+.modal .learn_more a:hover span:nth-child(1) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+.modal .learn_more a:hover span:nth-child(2) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.modal .learn_more a:hover span:nth-child(3) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+  transition-delay: 0.5s;
+}
+.modal .learn_more a:hover span:nth-child(4) {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s;
+  transition-delay: 0.5s;
+}
+
+.sa {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sa.sa-up {
+  transform: translate(0, 100px);
+  transform: scale(0.5);
+}
+.sa.sa-left {
+  transform: translate(100px, 0);
+}
+.sa.sa-right {
+  transform: translate(-100px, 0);
+}
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
+
+.main_2 {
+  margin-top: 150px;
+}
+.main_2 .main_2_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main_2 .main_2_wrap .good_word {
+  color: white;
+}
+.main_2 .main_2_wrap .good_word .word {
+  font-size: 50px;
+}
+.main_2 .main_2_wrap .good_word .word:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_2 .main_2_wrap .good_word .name {
+  font-size: 30px;
+  text-align: end;
+}
+.main_2 .main_2_wrap .introduce {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+.main_2 .main_2_wrap .introduce .left_content {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_2 .main_2_wrap .introduce .left_content img {
+  width: 100%;
+}
+.main_2 .main_2_wrap .introduce .right_content {
+  width: 45%;
+  color: white;
+}
+.main_2 .main_2_wrap .introduce .right_content .introduce_me {
+  font-size: 27px;
+  font-weight: bolder;
+}
+.main_2 .main_2_wrap .introduce .right_content .introduce_me:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_2 .main_2_wrap .introduce .right_content .introduce_content {
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+@media (min-width: 758px) and (max-width: 1023px) {
+  .main_2 {
+    height: 1800px;
+  }
+  .good_word {
+    text-align: center;
+  }
+  .good_word .word {
+    text-align: center;
+  }
+  .good_word .name {
+    text-align: center !important;
+  }
+  .introduce {
+    align-items: center;
+    flex-direction: column;
+  }
+  .introduce .right_content {
+    margin-top: 50px;
+    width: 90% !important;
+  }
+  .introduce .right_content .introduce_me {
+    font-size: 27px;
+    font-weight: bolder;
+  }
+  .introduce .right_content .introduce_content {
+    margin-top: 50px;
+    font-size: 30px;
+  }
+}
+.main_3 .main_3_wrap {
+  margin-top: 300px;
+}
+.main_3 .main_3_wrap .my_skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap {
+  position: relative;
+  width: 80%;
+  border: 2px solid white;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .header {
+  color: white;
+  font-size: 70px;
+  position: absolute;
+  top: -100px;
+  left: 30px;
+  background-color: black;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .header:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content {
+  display: flex;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left {
+  width: 50%;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .using_skill {
+  display: flex;
+  margin-top: 80px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .using_skill .html {
+  width: 400px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .using_skill .html img {
+  width: 100%;
+  min-width: 200px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .using_skill .css {
+  width: 280px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .using_skill .css img {
+  width: 100%;
+  min-width: 140px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .using_skill .javascript {
+  width: 410px;
+  margin-top: -15px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .using_skill .javascript img {
+  width: 100%;
+  min-width: 200px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .used_api .used_api_wrap {
+  position: relative;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .used_api .used_api_wrap .used_header {
+  color: white;
+  font-size: 40px;
+  margin: 50px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .used_api .used_api_wrap .api_list a {
+  margin-left: 30px;
+  color: white;
+  font-size: 50px;
+  padding: 30px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .used_api .used_api_wrap .api_list a:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .studying {
+  margin: 50px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .studying .studying_header {
+  color: white;
+  font-size: 40px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .studying .studying_content {
+  margin-top: 40px;
+  display: flex;
+  justify-content: start;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_left .studying .studying_content img {
+  width: 30%;
+  margin: 20px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right {
+  width: 50%;
+  display: flex;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap {
+  margin: 30px;
+  border: 1px solid white;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_graph_name h2 {
+  margin: 20px;
+  font-weight: bolder;
+  color: white;
+  font-size: 50px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_graph_name h2:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_gage {
+  margin: 30px;
+  display: flex;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_gage .name {
+  width: 55%;
+  color: white;
+  font-size: 30px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_gage .gage {
+  background-color: white;
+  margin-left: 40px;
+  opacity: 0.5;
+  width: 90%;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_gage .gage .gage_in {
+  background-color: #0fa;
+  height: 100%;
+  opacity: 0.4;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_gage .gage .gage_in.html {
+  width: 90%;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_gage .gage .gage_in.css {
+  width: 85%;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_graph .skill_gage .gage .gage_in.javascript {
+  width: 70%;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_summary {
+  margin-top: 100px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_summary .skill_summary_title h2 {
+  color: white;
+  font-size: 50px;
+  margin: 20px;
+  font-weight: bolder;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_summary .skill_summary_title h2:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_summary .skill_summary_wrap .title {
+  color: white;
+  margin: 30px;
+  font-size: 30px;
+}
+.main_3 .main_3_wrap .my_skill .my_skill_wrap .skill_content .skill_content_right .skill_content_right_wrap .skill_summary .skill_summary_wrap .summary {
+  color: white;
+  margin: 20px;
+  font-size: 30px;
+}
+
+@media (min-width: 758px) and (max-width: 1023px) {
+  .skill_content {
+    flex-direction: column;
+  }
+  .skill_content .skill_content_left {
+    width: 100% !important;
+  }
+  .skill_content .skill_content_left .using_skill {
+    justify-content: center;
+  }
+  .skill_content .skill_content_left .using_skill .javascript {
+    margin-top: -5px !important;
+  }
+  .skill_content .skill_content_right {
+    width: 100% !important;
+  }
+}
+.main_4 {
+  padding: 0 10%;
+}
+.main_4 .work_title h2 {
+  color: white;
+  font-size: 140px;
+}
+.main_4 .work_title h2:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_4 .main_4_wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 300px;
+}
+.main_4 .main_4_wrap .left_work {
+  margin-top: 100px;
+  padding: 30px;
+  width: 70%;
+  min-width: 700px;
+  border-radius: 20px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+.main_4 .main_4_wrap .left_work .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_4 .main_4_wrap .left_work .img img {
+  width: 95%;
+  min-width: 300px;
+}
+.main_4 .main_4_wrap .left_work .content {
+  width: 50%;
+}
+.main_4 .main_4_wrap .left_work .content .title {
+  margin-left: 15px;
+}
+.main_4 .main_4_wrap .left_work .content .title h2 {
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+}
+.main_4 .main_4_wrap .left_work .content .title h2:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_4 .main_4_wrap .left_work .content .skill {
+  margin-top: 20px;
+  display: flex;
+}
+.main_4 .main_4_wrap .left_work .content .skill .skill_type {
+  margin: 15px;
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_4 .main_4_wrap .left_work .content .skill .skill_type h2 {
+  color: white;
+}
+.main_4 .main_4_wrap .left_work .content .summary {
+  margin: 20px;
+  color: white;
+  font-size: 30px;
+}
+.main_4 .main_4_wrap .left_work .content .link_btn {
+  text-align: end;
+}
+.main_4 .main_4_wrap .left_work .content .link_btn a {
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 30px;
+  color: white;
+  border-radius: 10px;
+}
+.main_4 .main_4_wrap .left_work .content .link_btn a:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_4 .main_4_wrap .right_work {
+  margin-left: 30%;
+  margin-top: 100px;
+  padding: 30px;
+  width: 70%;
+  min-width: 700px;
+  border-radius: 20px;
+  border: 2px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+.main_4 .main_4_wrap .right_work .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_4 .main_4_wrap .right_work .img img {
+  width: 95%;
+  min-width: 300px;
+}
+.main_4 .main_4_wrap .right_work .content {
+  width: 50%;
+}
+.main_4 .main_4_wrap .right_work .content .title {
+  margin-left: 15px;
+}
+.main_4 .main_4_wrap .right_work .content .title h2 {
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+}
+.main_4 .main_4_wrap .right_work .content .title h2:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_4 .main_4_wrap .right_work .content .skill {
+  margin-top: 20px;
+  display: flex;
+}
+.main_4 .main_4_wrap .right_work .content .skill .skill_type {
+  margin: 15px;
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_4 .main_4_wrap .right_work .content .skill .skill_type h2 {
+  color: white;
+}
+.main_4 .main_4_wrap .right_work .content .summary {
+  margin: 20px;
+  color: white;
+  font-size: 30px;
+}
+.main_4 .main_4_wrap .right_work .content .link_btn {
+  text-align: end;
+}
+.main_4 .main_4_wrap .right_work .content .link_btn a {
+  margin: 20px;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 30px;
+  color: white;
+  border-radius: 10px;
+}
+.main_4 .main_4_wrap .right_work .content .link_btn a:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+@media (min-width: 758px) and (max-width: 1023px) {
+  .left_work {
+    flex-direction: column;
+  }
+  .left_work .img img {
+    width: 100% !important;
+  }
+  .left_work .content {
+    width: 100% !important;
+  }
+  .right_work {
+    flex-direction: column-reverse;
+    margin-left: 0% !important;
+  }
+  .right_work .img img {
+    width: 100% !important;
+  }
+  .right_work .content {
+    width: 100% !important;
+  }
+}
+.main_5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_5 .main_5_wrap {
+  width: 80%;
+  border: 1px solid white;
+  position: relative;
+}
+.main_5 .main_5_wrap .title {
+  position: absolute;
+  color: white;
+  top: -110px;
+  left: 20px;
+}
+.main_5 .main_5_wrap .title h2 {
+  background-color: black;
+  font-size: 140px;
+}
+.main_5 .main_5_wrap .title h2:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.main_5 .main_5_wrap .introduce {
+  margin: 50px;
+}
+.main_5 .main_5_wrap .introduce .introduce_up {
+  display: flex;
+  justify-content: space-around;
+}
+.main_5 .main_5_wrap .introduce .introduce_up .introduce_wrap {
+  width: 30%;
+  display: flex;
+  margin: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+.main_5 .main_5_wrap .introduce .introduce_up .introduce_wrap .img {
+  color: white;
+  font-size: 150px;
+}
+.main_5 .main_5_wrap .introduce .introduce_up .introduce_wrap .introduce_content {
+  margin-left: 30px;
+  color: white;
+  text-align: center;
+}
+.main_5 .main_5_wrap .introduce .introduce_up .introduce_wrap .introduce_content h2 {
+  font-size: 80px;
+}
+.main_5 .main_5_wrap .introduce .introduce_up .introduce_wrap .introduce_content h3 {
+  padding: 10px;
+  font-size: 30px;
+}
+.main_5 .main_5_wrap .introduce .introduce_down {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+.main_5 .main_5_wrap .introduce .introduce_down .introduce_wrap {
+  width: 30%;
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main_5 .main_5_wrap .introduce .introduce_down .introduce_wrap .img {
+  color: white;
+  font-size: 150px;
+}
+.main_5 .main_5_wrap .introduce .introduce_down .introduce_wrap .introduce_content {
+  margin-left: 30px;
+  color: white;
+  text-align: center;
+}
+.main_5 .main_5_wrap .introduce .introduce_down .introduce_wrap .introduce_content h2 {
+  font-size: 80px;
+}
+.main_5 .main_5_wrap .introduce .introduce_down .introduce_wrap .introduce_content h3 {
+  padding: 10px;
+  font-size: 30px;
+}
+.main_5 .main_5_wrap .introduce .introduce_down .introduce_wrap .introduce_content a {
+  color: white;
+  padding: 20px;
+  font-size: 30px;
+}
+
+@media (min-width: 758px) and (max-width: 1023px) {
+  .introduce .introduce_up {
+    flex-direction: column;
+    align-items: center;
+  }
+  .introduce .introduce_up .introduce_wrap {
+    width: 90% !important;
+    justify-content: space-between !important;
+  }
+  .introduce .introduce_up .introduce_wrap .introduce_content {
+    text-align: end !important;
+  }
+  .introduce .introduce_down {
+    flex-direction: column;
+    align-items: center;
+  }
+  .introduce .introduce_down .introduce_wrap {
+    width: 90% !important;
+    justify-content: space-between !important;
+  }
+  .introduce .introduce_down .introduce_wrap .introduce_content {
+    text-align: end !important;
+  }
+}
+.main_6 {
+  margin: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_6 .inner {
+  height: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main_6 .inner h1 img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  z-index: 3;
+  /* 수정 */
+  opacity: 1;
+}
+.main_6 .inner .img_wrap {
+  width: 900px;
+  height: 900px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main_6 .inner .img_wrap .tail {
+  cursor: pointer;
+  width: 5%;
+  height: 5%;
+  /* 수정 */
+  background-color: #009efd;
+  opacity: 0.4;
+}
+
+.modal_background {
+  display: none;
+  position: fixed;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+.modal_background .modal_box {
+  position: absolute;
+  top: calc(50vh - 280px);
+  left: calc(50vw - 350px);
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 650px;
+  height: 450px;
+}
+.modal_background .modal_box .modal_box_wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.modal_background .modal_box .modal_box_wrap .fa-x {
+  position: absolute;
+  top: 30px;
+  left: 90%;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+}
+.modal_background .modal_box .modal_box_wrap .fa-x:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.modal_background .modal_box .modal_box_wrap .exp {
+  margin-top: 40px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me {
+  display: none;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me.active {
+  display: flex;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .title {
+  text-align: center;
+  font-weight: bolder;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .title:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .exp_aboutme {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 10px;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .exp_aboutme .picture {
+  margin-bottom: 10px;
+  width: 55%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .exp_aboutme .picture img {
+  width: 100%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .exp_aboutme .about_me_exp {
+  margin-left: 5%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .exp_aboutme .about_me_exp h2 {
+  font-size: 30px;
+  margin: 10px;
+}
+.modal_background .modal_box .modal_box_wrap .exp#about_me .exp_aboutme .about_me_exp h3 {
+  font-size: 25px;
+  margin: 5px;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill {
+  display: none;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill.active {
+  display: flex;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp {
+  width: 100%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp .skill_exp_wrap {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp .skill_exp_wrap .title {
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp .skill_exp_wrap .gage {
+  width: 70%;
+  background-color: white;
+  opacity: 0.4;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp .skill_exp_wrap .gage .gage_in {
+  height: 100%;
+  background-color: #0fa;
+  opacity: 0.7;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp .skill_exp_wrap .gage .gage_in.html {
+  width: 80%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp .skill_exp_wrap .gage .gage_in.css {
+  width: 70%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#skill .skill_exp .skill_exp_wrap .gage .gage_in.js {
+  width: 65%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#work {
+  margin-top: 15%;
+  display: none;
+}
+.modal_background .modal_box .modal_box_wrap .exp#work.active {
+  display: flex;
+}
+.modal_background .modal_box .modal_box_wrap .exp#work .work_exp {
+  position: relative;
+  width: 100%;
+  height: 80%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#work .work_exp .swiper {
+  width: 100%;
+  height: 100%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#work .work_exp .swiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_background .modal_box .modal_box_wrap .exp#work .work_exp .swiper .swiper-slide img {
+  width: 80%;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact {
+  margin-top: 10%;
+  display: none;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact.active {
+  display: flex;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp .contact_exp_wrap {
+  display: flex;
+  color: white;
+  padding: 20px;
+  justify-content: space-between;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp .contact_exp_wrap .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp .contact_exp_wrap .img i {
+  font-size: 35px;
+  margin-right: 30px;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp .contact_exp_wrap .img h2 {
+  font-size: 35px;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp .contact_exp_wrap .contact_info h2 {
+  font-size: 35px;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp .contact_exp_wrap .contact_info a {
+  color: white;
+  font-size: 35px;
+}
+.modal_background .modal_box .modal_box_wrap .exp#contact .contact_exp .contact_exp_wrap .contact_info a:hover {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+/* 모달창 영역을 꾸민다 */
+#drawing_line {
+  position: relative;
+  z-index: 10;
+  height: 0;
+}
+#drawing_line svg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background-color: transparent;
+}
+#drawing_line svg .drawing_line_polyline {
+  fill: none;
+  stroke: white;
+  opacity: 0.8;
+  stroke-width: 3;
+}
+#drawing_line svg .drawing_line_circle {
+  fill: white;
+  opacity: 0.8;
+}
+
+.main_location {
+  margin-top: 150px;
+}
+
+#bg_star {
+  position: absolute;
+  z-index: -1;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}/*# sourceMappingURL=main.css.map */

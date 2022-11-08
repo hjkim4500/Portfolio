@@ -1,0 +1,22 @@
+@import "../all";
+@import "../main/header";
+@import "../main/main_1";
+@import "../main/main_2";
+@import "../main/main_3";
+@import "../main/main_4";
+@import "../main/main_5";
+@import "../main/main_6";
+@import "../main/modal";
+@import "../main/mouse";
+
+.main_location {
+  margin-top: 150px;
+}
+#bg_star {
+  position: absolute;
+  z-index: -1;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

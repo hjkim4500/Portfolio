@@ -1,0 +1,53 @@
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+body {
+  background-color: black;
+}
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR ", sans-serif;
+  font-weight: 500; // medium
+  word-break: keep-all;
+  -webkit-text-size-adjust: none; // Mobile Safari에서 자동으로 텍스트 크기가 조정되는 이슈 방지
+}
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 0; // 초기 위치값을 설정해줍니다.
+  left: 0; // 초기 위치값을 설정해줍니다.
+  width: 20px; //원 가로사이즈
+  height: 20px; //원 세로사이즈
+  border-radius: 50%; // 원의 형태설정
+  background-color: white; //원 컬러설정
+  transform: translate(
+    -50%,
+    -50%
+  ); // 원을 정가운데로 맞추기위해서 축을-50%이동해줍니다.
+  transition-delay: 0.2s;
+}
+html {
+  scroll-behavior: smooth;
+}
